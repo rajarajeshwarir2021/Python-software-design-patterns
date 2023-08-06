@@ -15,6 +15,9 @@ Components required:
     Factory class that instantiates the right implementation
 Use:
     Access different Databases
+    Access different Network
+    Access different User Input
+    Access different File Storage
 """
 
 from abc import ABC, abstractmethod
