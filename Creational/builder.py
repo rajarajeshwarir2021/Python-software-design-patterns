@@ -66,6 +66,6 @@ if __name__ == '__main__':
     db_service_1.show()
 
     # Build a Database using mint parameters of Python
-    db_service_2 = DatabaseService("MySQL", "78910")
+    db_service_2 = DatabaseService(target="MySQL", auth="78910")
     db_service_2.show()
 
