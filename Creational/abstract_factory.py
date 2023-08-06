@@ -11,35 +11,46 @@ from abc import ABC, abstractmethod
 
 
 class DataSourceType:
+    """DataSource types class"""
     database = 1
     network = 2
     fileStorage = 3
 
 
 class DataSource(ABC):
+    """Abstract DataSource class"""
     @abstractmethod
     def make_connection(self):
+        """Abstract make connection method"""
         pass
 
 
 class Database(DataSource):
+    """Database class"""
     def make_connection(self):
+        """Make connection to database method"""
         print("Connecting Database...")
 
 
 class Network(DataSource):
+    """Network class"""
     def make_connection(self):
+        """Make connection to network method"""
         print("Connecting Network...")
 
 
 class FileStorage(DataSource):
+    """FileStorage class"""
     def make_connection(self):
+        """Make connection to file storage method"""
         print("Connecting File Storage...")
 
 
 class DataSourceFactory:
+    """DataSource Factory class"""
     @staticmethod
     def connection_types(d_type: DataSourceType):
+        """Connection types method"""
         if d_type == DataSourceType.database:
             return Database()
         elif d_type == DataSourceType.network:
@@ -48,7 +59,8 @@ class DataSourceFactory:
             return FileStorage()
 
 
-def connect_to(connection: Database):
+def connect_to(connection: DataSource):
+    """Connect to a DataSource"""
     print("We are connecting to: ")
     connection.make_connection()
 
