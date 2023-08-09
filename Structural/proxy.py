@@ -37,7 +37,8 @@ class ProxyDataStore(DataStore):
 
     def display(self):
         """Display data method"""
-        print(f"Proxy data: displaying {self.filename}", end="\n")
+        print(f"Proxy data: displaying {self.filename}", end="\n"
+                                                             "")
         if not self.real_data:
             print("From disk")
             self.real_data = HardDisk(self.filename)
